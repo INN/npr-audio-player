@@ -1,9 +1,25 @@
+/* hide the real widget */
+.widget_npr_audio_widget {
+    visibility: hidden;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
 #site-header {
 	margin-bottom:0;
+}
+#audio_display.fixed {
+	position:fixed;
+	bottom:0;
+	left:0;
 }
 .block-nprap {
 	background: #4a565f;
 	min-height: 3em;
+}
+.jp-volume-bar {
+	display:none!important;
 }
 @media only screen and (min-width:40.063em) {
 	.block-nprap {
@@ -155,6 +171,7 @@
 	}
 }
 .more-toggle {
+	display:none;
 	background: #363d44;
 	border-left: 1px solid #363d44;
 	font-size: .8em;
@@ -167,10 +184,13 @@
 .more-toggle span {
 	display: none;
 }
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width:768px) {
 	.more-toggle {
 		width: auto;
+		display:table-cell;
 	}
+}
+@media only screen and (min-width:40.063em) {
 	.more-toggle span {
 		display: inline;
 	}
@@ -291,10 +311,10 @@
 	display: block;
 }
 .change-volume {
-	display: none;
+	display: block;
 }
 .volume-container {
-	display: none;
+	display: inline-block;
 }
 .jp-mute svg, .jp-unmute svg {
 	-ms-transform: scale(0.9);
@@ -325,18 +345,26 @@
 .no-touch .volume-container {
 	border-radius: 3px;
 	display: inline-block;
-	height: 2em;
+	height: 40px;
 	overflow: hidden;
 	position: absolute;
 	-webkit-transition: all 0.1s cubic-bezier(0.17, 0.37, 0.43, 0.67) 0.2s;
 	transition: all 0.1s cubic-bezier(0.17, 0.37, 0.43, 0.67) 0.2s;
-	width: 2em;
+	width: 40px;
+	margin-top: 5px;
+	right: 10px;
 }
-.no-touch .volume-container:hover {
+@media only screen and (min-width:40.063em) {
+	.no-touch .volume-container {
+		margin-top:-5px;
+		right: auto;
+	}
+}
+/*.no-touch .volume-container:hover {
 	background: #1f2328;
 	cursor: pointer;
 	height: 8.5em;
-}
+}*/
 .no-touch .jp-volume-bar {
 	display: none;
 	height: 5em;
@@ -347,8 +375,8 @@
 	width: 2em;
 }
 .no-touch .jp-volume-bar-value-bg, .no-touch .jp-volume-bar-value {
-	background: #7f95a4;
-	border-radius: 1px;
+	/*background: #7f95a4;
+	border-radius: 1px;*/
 	bottom: 0;
 	left: 0.75em;
 	position: absolute;
@@ -365,7 +393,10 @@
 .volume-buttons {
 	background: #363d44;
 	border-radius: 50%;
-	padding: 5px;
+	padding: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 	-webkit-transition: all 0.1s cubic-bezier(0.17, 0.37, 0.43, 0.67) 0.2s;
 	transition: all 0.1s cubic-bezier(0.17, 0.37, 0.43, 0.67) 0.2s;
 }
@@ -382,6 +413,7 @@
 }
 .stream-song-meta-view {
 	overflow: hidden;
+	margin: 0 2em;
 }
 @media only screen and (min-width:40.063em) {
 	.stream-song-meta-view .song-meta-view-inner {
@@ -491,6 +523,11 @@
 .streams-list li {
 	border-top: 1px solid #4a565f;
 	padding: 0 2% .5em;
+	margin-bottom:0;
+}
+.streams-list li:hover {
+	cursor: pointer;
+	opacity:.9;
 }
 .streams-list li:first-child {
 	border-top: 0;
@@ -510,13 +547,13 @@
 		width: 30%;
 	}
 }
-.streams-list li a {
+.streams-list li {
 	color: #7f95a4;
 	font-size: 100%;
 	text-decoration: none;
 }
 @media only screen and (min-width:40.063em) {
-	.streams-list li a {
+	.streams-list li {
 		font-size: 85%;
 	}
 }
@@ -541,6 +578,17 @@ a:focus.stream {
 	.stream-name .stream-label {
 		font-size: .9em;
 		margin-top: 0;
+	}
+}
+@media only screen and (max-width:768px) {
+	#site-footer ul li.single-stream {
+		margin-bottom:0;
+	}
+	#streams-wrapper .stream-label,
+	#streams-wrapper .program-name {
+		font-size: .8em;
+		margin-top: 10px;
+		display:inline-block;
 	}
 }
 .playing .current.playing .stream-name .stream-label, .playing .current.paused .stream-name .stream-label, .now-playing .stream-name .stream-label {
@@ -575,6 +623,13 @@ a:focus.stream {
 	.stream-indicator {
 		margin-top: 0.25em;
 		margin-right: 0.5em;
+	}
+}
+@media only screen and (max-width:768px) {
+	.stream-indicator {
+		margin-top: 0;
+		height: 2em;
+    	width: 2em;
 	}
 }
 .stream-inactive {

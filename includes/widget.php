@@ -178,39 +178,44 @@ class npr_audio_widget extends WP_Widget {
 			</div>
 
 		</div></div></div>
-		            <div id="player-extras" class="player-extras"><div class="streams-view btn-group"><ul id="streams-wrapper" class="streams-list">
-		<li id="stream-0" class="single-stream benched paused"><a class="stream" href="<?php echo $streams[0]['url']; ?>">
+		            <div id="player-extras" class="player-extras"><div class="streams-view btn-group">
+	<ul id="streams-wrapper" class="streams-list">
+		<li id="stream-0" class="single-stream current paused">
 			<div class="stream-indicator">
 				<div class="stream-inactive" title="not-playing"></div>
 				<div class="stream-active" title="playing">
+			    <!-- <span class="stream-activebar"></span>
 			    <span class="stream-activebar"></span>
 			    <span class="stream-activebar"></span>
-			    <span class="stream-activebar"></span>
-			    <span class="stream-activebar"></span>
+			    <span class="stream-activebar"></span> -->
 				</div>
 			</div>
 			<div class="stream-name">
-		    <div class="stream-label"><?php echo $streams[0]['desc']; ?></div>
-		    <div class="program-name"><!-- data.onNow.program.name --></div>
+			    <div class="stream-label"><?php echo $streams[0]['desc']; ?></div>
+			    <div class="program-name"><!-- data.onNow.program.name --></div>
 		  </div>
-		</a>
 		</li>
-		<li id="stream-1" class="single-stream current paused"><a class="stream" href="<?php echo $streams[1]['url']; ?>">
+		<li id="stream-1" class="single-stream benched paused">
 			<div class="stream-indicator">
 				<div class="stream-inactive" title="not-playing"></div>
-				<div class="stream-active" title="playing">
-			    <span class="stream-activebar"></span>
-			    <span class="stream-activebar"></span>
-			    <span class="stream-activebar"></span>
-			    <span class="stream-activebar"></span>
-				</div>
+				<div class="stream-active" title="playing"></div>
 			</div>
 			<div class="stream-name">
-		    <div class="stream-label"><?php echo $streams[1]['desc']; ?></div>
-		    <div class="program-name">Classical Music Through the Night</div>
+			    <div class="stream-label"><?php echo $streams[1]['desc']; ?></div>
+			    <div class="program-name"><!-- data.onNow.program.name --></div>
 		  </div>
-		</a>
-		</li></ul>
+		</li>
+		<li id="stream-2" class="single-stream benched paused">
+			<div class="stream-indicator">
+				<div class="stream-inactive" title="not-playing"></div>
+				<div class="stream-active" title="playing"></div>
+			</div>
+			<div class="stream-name">
+			    <div class="stream-label"><?php echo $streams[2]['desc']; ?></div>
+			    <div class="program-name"><!-- data.onNow.program.name --></div>
+		  </div>
+		</li>
+	</ul>
 		</div></div>
 		          </div>
 		        </div>
