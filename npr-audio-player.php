@@ -10,7 +10,7 @@
  *
  * @link              https://labs.inn.org
  * @since             1.0.0
- * @package           Npr_Audio_Player
+ * @package           NPR_Audio_Player
  *
  * @wordpress-plugin
  * Plugin Name:       NPR Audio Player
@@ -75,3 +75,18 @@ function run_npr_audio_player() {
 
 }
 run_npr_audio_player();
+
+/**
+ * Registers the audio player widget
+ */
+require_once( 'includes/widget.php' );
+
+add_action( 'widgets_init', function() { register_widget( 'npr_audio_widget' ); } );
+
+/**
+ * Registers the audio player settings
+ */
+require_once( 'includes/settings.php' );
+new NPR_Audio_Player_Settings();
+
+?>
