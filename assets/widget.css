@@ -9,10 +9,28 @@
 #site-header {
 	margin-bottom:0;
 }
+/*#audio_display {
+    width: 100%;
+    padding: 0 2.5%;
+    background-color: #4a565f;
+    box-sizing: border-box;
+    z-index: 99999;
+    position: absolute;
+    left: 0;
+}
+#main-nav {
+    margin-top: 80px;
+    //margin-top: 140px;
+}*/
+#jp_container_1 {
+	max-width:1170px;
+	margin:0 auto;
+}
 #audio_display.fixed {
 	position:fixed;
 	bottom:0;
 	left:0;
+	z-index:999;
 }
 .block-nprap {
 	background: #4a565f;
@@ -20,6 +38,9 @@
 }
 .jp-volume-bar {
 	display:none!important;
+}
+#site-footer #player-bar .now-playing:hover {
+	cursor:pointer;
 }
 @media only screen and (min-width:40.063em) {
 	.block-nprap {

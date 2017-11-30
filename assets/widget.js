@@ -72,6 +72,7 @@ $(document).ready(function(){
 	var audio_display = '<div id="audio_display"></div>';
 
 	$('#site-header').append(audio_display);
+	//$('.global-nav-bg').append(audio_display);
 
 	initPlayerHTML();
 
@@ -237,13 +238,25 @@ function positionPlayer(){
 			$container.detach();
 			$container.appendTo('#site-footer').addClass('fixed');
 			$('#nprap-wrapper').addClass('expanded topexpand');
+
+
+			$('#player-bar .now-playing').unbind().click(function(){
+				$('#site-footer #nprap-wrapper').toggleClass('expanded topexpand');
+			})
+
+			//$('#site-footer #metadata-container').hide();
 		}
 	} else if (win_width > 768){
 		if ( $container.parent("#site-footer").length > 0 ){
 			$container.detach();
 			$container.appendTo('#site-header').removeClass('fixed');
+
+			//$('#metadata-container').show();
 		}
 	}
+
+	// this didn't work
+	//initPlayerControls($("#npr-stream-player")[0]);
 
 	//$('.nav-shelf, .nav-shelf .menu-item a').click(function(){
 	$('.nav-shelf *').click(function(){
